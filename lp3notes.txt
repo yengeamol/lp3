@@ -1,0 +1,197 @@
+A recursive function is a function that calls itself in order to solve a problem. It typically breaks the problem into smaller,
+simpler instances of the same problem, until it reaches a base case (a condition that stops the recursion).
+
+
+A non-recursive function is a function that does not call itself. Instead, it uses loops or other 
+control structures to solve a problem iteratively.
+
+1) Recursive   [ T & s  0(n) ]
+2) non Recursive [ T 0(n) , s 0(1) ]
+
+Here are the short and simple rules for writing recursive functions:
+
+Base Case: Always define a base case that stops the recursion.
+Recursive Case: Ensure each recursive call reduces the problem toward the base case.
+Progress Toward Base Case: Make sure the input gets smaller or simpler in each recursive call.
+Avoid Infinite Recursion: Ensure that the recursion will eventually terminate by reaching the base case.
+Return Values Correctly: Each recursive call should return the result, passing it back up.
+Tail Recursion (optional): If possible, use tail recursion to optimize for memory.
+
+A Greedy Algorithm is a problem-solving approach where you make the best choice at each step, 
+hoping it will lead to the overall best solution. It makes local optimal choices without reconsidering them later.
+
+Key Points:
+Local Optimal Choice: At each step, choose the best option available.
+No Backtracking: Once a decision is made, it's not changed.
+Efficient: Often faster and simpler because it avoids exploring all possibilities.
+Example Problems:
+Activity Selection: Choose the maximum number of non-overlapping activities by always picking the one that finishes first.
+Coin Change: Given coin denominations, choose the largest coin first to minimize the number of coins.
+When It Works:
+Works well when local choices lead to an overall optimal solution (e.g., Activity Selection, Fractional Knapsack).
+
+drawback -  doesnt give optimal solution always 
+
+Huffman Encoding is a popular algorithm used for data compression. It helps to reduce the size of data by 
+assigning shorter codes to more frequent characters and longer codes to less frequent characters. 
+This technique is used in applications like text file compression (e.g., ZIP files) and image compression (e.g., JPEG).
+
+Key Idea:
+Huffman Encoding builds an optimal binary tree based on the frequencies of characters in the data.
+The most frequent characters are assigned shorter codes, while less frequent characters are assigned longer codes.
+This approach minimizes the total number of bits needed to represent the data.
+
+A Huffman Tree is a binary tree used in Huffman Encoding for data compression. It represents the most efficient way to 
+encode data based on the frequency of characters. The tree is constructed in a way that minimizes the total number of
+bits needed to encode the data.
+
+The Knapsack Problem is a classic optimization problem in computer science and mathematics, where the goal is to select
+ items to maximize the total value without exceeding the capacity of a knapsack. It is called a "knapsack problem" 
+ because it’s modeled after a scenario where you have a knapsack (a bag with a weight limit) and a collection of items, 
+ each with a specific weight and value.
+ 
+ two types 1)0/1  
+ 2)fractional knapsack
+ 
+ Definition: Unlike the 0/1 knapsack, in the fractional version, you can take fractions of items.
+ For example, if an item’s value is 100 and its weight is 10, you can take 5 units of that item, getting 50 units of value.
+Objective: Maximize the total value by selecting fractions of items, subject to the weight limit.
+Example:
+You can break items into fractions to take part of them, allowing more flexibility in maximizing the total value.
+
+Backtracking is a general algorithmic technique used to solve problems by incrementally building candidates for
+ the solution and discarding those that fail to meet the conditions of the problem (i.e., "backtrack") as soon 
+ as we determine they can't lead to a valid solution. It is a refinement of the brute-force approach, where we 
+ systematically explore all possibilities but prune the search space when a partial solution is found to be invalid.
+ 
+ Key Concepts of Backtracking:
+Incremental Search: Backtracking builds a solution step-by-step, one choice at a time.
+Backtracking Step: If a partial solution violates the problem constraints, we undo (or backtrack) the last step and try the next possible choice.
+Exploration and Pruning: The algorithm explores each possible solution, but if at any point it finds that continuing is not going to lead to a
+ valid solution, it prunes that path and backtracks to try different choices.
+
+The N-Queens Problem is a classical problem in computer science and combinatorial optimization. The task is to place N queens
+ on an N×N chessboard such that no two queens can attack each other. A queen can attack another queen if they are in the same 
+ row, column, or diagonal.
+ 
+ Backtracking Approach to Solve the N-Queens Problem:
+The N-Queens problem is typically solved using backtracking, which explores all possible placements for the queens while eliminating solutions that violate the constraints.
+
+Steps for Backtracking Solution:
+Start with an empty board: Initially, no queens are placed on the board.
+Try to place a queen in a row: Begin with the first row and place a queen in one of the columns.
+Check for validity: After placing a queen, check if it conflicts with any previously placed queens in terms of column or diagonal.
+Move to the next row: If placing a queen in the current row is valid, recursively try to place a queen in the next row.
+Backtrack: If placing a queen leads to a conflict, backtrack by removing the queen and trying the next possible column in the current row.
+Repeat until all queens are placed or no valid arrangement exists.
+The time complexity in the worst case is 
+0(N!)
+and the space complexity is 
+O(N).
+
+Regression algorithms in machine learning are a type of supervised learning algorithm used to model the relationship between 
+a dependent (target) variable and one or more independent (predictor) variables. The goal of regression is to predict a continuous 
+output, which makes it different from classification algorithms that predict discrete labels.
+
+Here are the main types of regression algorithms used in machine learning:
+
+Linear Regression: Simple, for linear relationships.
+Multiple Linear Regression: For multiple features.
+Ridge and Lasso Regression: Regularization methods to reduce overfitting.
+Elastic Net: Combination of Ridge and Lasso.
+Polynomial Regression: For non-linear relationships.
+Decision Tree Regression: Non-linear, tree-based.
+Random Forest Regression: Ensemble of decision trees.
+SVR: Non-linear regression with support vector machines.
+KNN Regression: Non-parametric, based on neighbors.
+Neural Networks: Powerful for complex, non-linear regression.
+
+
+1. Linear Regression
+Description: Linear regression is one of the simplest and most widely used regression techniques.
+ It models the relationship between the dependent variable and independent variable(s) as a straight line.
+Equation: For a single feature (variable), the linear regression model is represented as
+
+y = B0 + B1x + c
+
+y = predicted output
+x = input feature 
+B0 = intercept
+B1 = coefficient or slope 
+c  = error term 
+
+A Decision Tree in regression is a type of machine learning algorithm used to predict 
+a continuous target variable. It works by recursively splitting the data into subsets
+ based on the values of the input features, aiming to minimize the variance (or error) 
+ in the target variable within each subset.
+ 
+ Pruning in decision trees is a technique used to reduce the size of a decision tree 
+ by removing parts of the tree that do not provide additional predictive power. 
+ The goal of pruning is to improve the generalization of the model and prevent overfitting.
+ 1) pre-pruining
+ 2) post-pruining
+ 
+ Binary classification is a type of classification problem in machine learning where 
+ the goal is to categorize input data into one of two distinct classes. Each input is 
+ assigned to one of two possible categories, often labeled as 0 and 1, True and False,
+ or Positive and Negative.
+ 
+ Common Examples of Binary Classification Problems:
+Email Spam Detection: Classifying an email as spam (1) or not spam (0).
+Medical Diagnosis: Predicting whether a patient has a certain disease (positive, 
+1) or does not have the disease (negative, 0).
+Sentiment Analysis: Classifying a review as positive (1) or negative (0).
+Fraud Detection: Predicting whether a transaction is fraudulent (1) or legitimate (0).
+
+
+A confusion matrix is a table used to evaluate the performance of a 
+classification model by comparing the predicted and actual class labels.
+ For binary classification, it contains:
+
+True Positives (TP): Correctly predicted positive cases.
+True Negatives (TN): Correctly predicted negative cases.
+False Positives (FP): Incorrectly predicted positive cases (Type I error).
+False Negatives (FN): Incorrectly predicted negative cases (Type II error).
+Metrics from Confusion Matrix:
+Accuracy = (TP + TN) / (TP + TN + FP + FN)
+Precision = TP / (TP + FP)
+Recall = TP / (TP + FN)
+F1 Score = 2 × (Precision × Recall) / (Precision + Recall)
+Specificity = TN / (TN + FP)
+
+K-Nearest Neighbors (KNN) is a simple supervised learning algorithm used for 
+classification and regression. It works by finding the K nearest neighbors to a 
+data point and making predictions based on their labels or values.
+
+How it works:
+Choose K: Select the number of nearest neighbors.
+Calculate distance: Find the distance between the query point and all other points 
+(usually using Euclidean distance).
+Make prediction:
+Classification: Assign the most common class among the K neighbors.
+Regression: Compute the average of the K neighbors' values.
+Advantages:
+Simple and easy to understand.
+No training phase (lazy learning).
+Works for both classification and regression.
+Disadvantages:
+Computationally expensive for large datasets.
+Sensitive to irrelevant features and noisy data.
+Summary:
+KNN classifies or predicts by considering the K closest training samples to a query point.
+
+Support Vector Machine (SVM) is a powerful supervised learning algorithm used for 
+classification and regression tasks. It finds the optimal hyperplane that separates the 
+data into different classes.
+
+How it works:
+Linear SVM: Finds a hyperplane that best separates the classes with the largest 
+margin (distance between the hyperplane and nearest data points).
+Non-Linear SVM: Uses kernel functions (e.g., polynomial or RBF) to transform 
+data into higher dimensions to find a separating hyperplane when the data is not linearly separable.
+Key Concepts:
+Margin: The distance between the hyperplane and the nearest data points (called support vectors).
+Support Vectors: The data points that are closest to the hyperplane and are critical
+ for defining the decision boundary.
+ 
+ 
