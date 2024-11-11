@@ -1,0 +1,57 @@
+import java.util.Arrays;
+
+class Item {
+    int value, weight;
+
+    public Item(int value, int weight) {
+        this.value = value;
+        this.weight = weight;
+    }
+
+    // Method to calculate value-to-weight ratio
+    public double getRatio() {
+        return (double) value / weight;
+    }
+}
+
+
+public class Knapsack {
+	// Method to solve the fractional knapsack problem
+    public static double getMaxValue(Item[] items, int capacity) {
+        // Sort items by value-to-weight ratio in decreasing order
+        Arrays.sort(items, (a, b) -> Double.compare(b.getRatio(), a.getRatio()));
+
+        double totalValue = 0.0;
+        for (Item item : items) {
+            if (capacity == 0) break;
+
+            if (item.weight <= capacity) {
+                // If the item can fit entirely, take it
+                totalValue += item.value;
+                capacity -= item.weight;
+            } else {
+                // If the item can't fit entirely, take the fraction of it
+                totalValue += item.value * ((double) capacity / item.weight);
+                break; // Knapsack is full
+            }
+        }
+        return totalValue;
+    }
+
+    public static void main(String[] args) {
+        // Example items (value, weight)
+        Item[] items = {
+            new Item(60, 10),
+            new Item(100, 20),
+            new Item(120, 30)
+        };
+
+        int capacity = 50; // Knapsack capacity
+
+        // Calculate the maximum value that can be taken in the knapsack
+        double maxValue = getMaxValue(items, capacity);
+
+        // Print the result
+        System.out.println("Maximum value in Knapsack = " + maxValue);
+    }
+}
